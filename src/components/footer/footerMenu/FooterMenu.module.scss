@@ -1,0 +1,30 @@
+.content {
+  width: auto;
+}
+
+.header {
+  color: var(--text_header);
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  white-space: nowrap;
+}
+
+.listMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 18px;
+  color: var(--text_accent2);
+}
+
+.title:hover {
+  opacity: 0.8;
+}
+
+.title:active {
+  opacity: 0.6;
+}

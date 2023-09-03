@@ -1,0 +1,169 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap");
+
+:root {
+  overflow-x: hidden;
+}
+
+.light {
+  /* Light mode */
+  --background_page: #ffffff;
+  --background_card: #f6f6f6;
+  --background_card_accent: #0073e5;
+  --background_input: #efefef;
+
+  --background_contacts_before: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff00 100%
+  );
+  --background_contacts_after: linear-gradient(
+    90deg,
+    #ffffff00 0%,
+    #ffffff 100%
+  );
+
+  /* Иконки светлые */
+  --icon_accent: #0073e5;
+  --icon_primary: #2f353f;
+  --icon_header: #0073e5;
+
+  /* Текст светлый */
+  --text_accent: #0073e5;
+  --text_accent2: #2f353f;
+  --text_primary: #2f353f;
+  --text_primary_reverse: #ffffff;
+  --text_header: #0073e5;
+  --text_secondary: #969696;
+  --text_placeholder: #b5b5b5;
+
+  /* Кнопки светлые */
+  --background_button_accent: #0073e5;
+}
+
+.dark {
+  /* Dark mode */
+  --background_page: #2f353f;
+  --background_card: #3a3e49;
+  --background_card_accent: #b2cbff;
+  --background_input: #2f353f;
+
+  --background_contacts_before: linear-gradient(
+    90deg,
+    #2f353f 0%,
+    #2f353f00 100%
+  );
+  --background_contacts_after: linear-gradient(
+    90deg,
+    #2f353f00 0%,
+    #2f353f 100%
+  );
+
+  /* Иконки тёмные */
+  --icon_accent: #b2cbff;
+  --icon_primary: #ffffff;
+  --icon_header: #ffffff;
+
+  /* Текст тёмный */
+  --text_accent: #b2cbff;
+  --text_accent2: #b2cbff;
+  --text_primary: #ffffff;
+  --text_primary_reverse: #2f353f;
+  --text_header: #ffffff;
+  --text_secondary: #bfbfbf;
+  --text_placeholder: #878787;
+
+  /* Кнопки тёмные */
+  --background_button_accent: #b2cbff;
+}
+
+html,
+body {
+  min-height: 100vh;
+
+  font-family: "Geologica", sans-serif;
+  letter-spacing: -0.5px;
+  background: var(--background_page);
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Снэк-бар - расположите ее внизу и в середине экрана */
+#snackbar {
+  visibility: hidden; /* Скрыто по умолчанию. Видимый по щелчку мыши */
+  min-width: 250px; /* Установите минимальную ширину по умолчанию */
+  max-width: 400px;
+  background: var(--text_secondary); /* Цвет фона */
+  color: #fff; /* Цвет текста */
+  text-align: left; /* Центрированный текст */
+  border-radius: 16px; /* Округленные границы */
+  padding: 16px; /* Отступ */
+  position: fixed; /* Сядьте на верхнюю часть экрана */
+  z-index: 5; /* Добавить z-индекс при необходимости */
+  left: 50px;
+  right: 50px;
+  bottom: 30px; /* 30 пикселей снизу */
+}
+
+/* Показывать снэк-бар при нажатии на кнопку (Класс добавлен с помощью JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Покажите снэк-бар */
+  /* Добавить анимацию: Возьмите 0,5 секунды, чтобы исчезать и выходить из закусочной.
+  Однако задержите процесс затухания на 2,5 секунды */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Анимация, чтобы исчезать снэк-бар в и из */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}

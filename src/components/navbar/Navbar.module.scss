@@ -1,0 +1,336 @@
+.nav {
+  position: fixed;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.nav::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 2;
+  background-color: var(--background_page);
+}
+
+.container {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0px 50px;
+}
+
+.navBody {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  min-height: 70px;
+  max-height: 70px;
+  align-items: center;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+}
+
+.navLogo:hover {
+  opacity: 0.8;
+}
+
+.navLogo:active {
+  opacity: 0.6;
+  transition: opacity 0s ease-in;
+}
+
+.logo {
+  color: var(--icon_header);
+  width: 60px;
+  height: 60px;
+}
+
+.textLogo {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text_header);
+}
+
+.afterMenu {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.headerBurger {
+  display: none;
+}
+
+.headerMenu {
+}
+
+.headerList {
+  display: flex;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.headerLink {
+  font-size: 16px;
+  color: var(--text_header);
+  transition: opacity 0.2s ease-in;
+  display: flex;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+.headerLink:hover {
+  opacity: 0.8;
+}
+
+.headerLink.active {
+  position: relative;
+  opacity: 1;
+  transition: opacity 0s ease-in;
+}
+
+.headerLink.active::before {
+  content: "";
+  position: absolute;
+  display: flex;
+  top: 100%;
+  height: 4px;
+  width: 4px;
+  border-radius: 100px;
+  background-color: var(--text_header);
+}
+
+.buttonHeader {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.languageButton {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text_header);
+  transition: opacity 0.2s ease-in;
+}
+
+.languageButton:hover {
+  opacity: 0.8;
+}
+
+.languageButton:active {
+  opacity: 0.6;
+  transition: opacity 0s ease-in;
+}
+
+.themeButton {
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+}
+
+.themeButton:hover {
+  opacity: 0.8;
+}
+
+.themeButton:active {
+  opacity: 0.6;
+  transition: opacity 0s ease-in;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 0px 24px;
+  }
+
+  .logo {
+    color: var(--icon_header);
+    width: 50px;
+    height: 50px;
+  }
+
+  .textLogo {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text_header);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .logo {
+    color: var(--icon_header);
+    width: 50px;
+    height: 50px;
+  }
+
+  .textLogo {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text_header);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .headerList {
+    display: none;
+  }
+
+  .navLogo {
+    gap: 12px;
+  }
+
+  //кнопка бургер меню
+  .headerBurger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 3;
+  }
+
+  .headerBurger::before,
+  .headerBurger::after {
+    content: "";
+    background: var(--icon_header);
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    border-radius: 4px;
+    transition: transform 0.5s ease 0s;
+  }
+
+  .headerBurger::before {
+    top: 0;
+  }
+
+  .headerBurger::after {
+    bottom: 0;
+  }
+
+  .headerBurger span {
+    position: absolute;
+    background: var(--icon_header);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: transform 0.5s ease 0s;
+  }
+
+  .headerBurger.active span {
+    transform: rotate(45deg) scale(0);
+  }
+
+  .headerBurger.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+
+  .headerBurger.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  //конец кнопки бургер меню
+
+  //выпадающее меню
+  .headerMenu {
+    display: block;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 82px 12px 24px 12px;
+    transition: top 1s ease 0s;
+    background: var(--background_page);
+  }
+
+  .headerMenu.active {
+    top: 0;
+  }
+
+  .headerList {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+  }
+
+  .headerLink {
+    font-size: 20px;
+    color: var(--text_header);
+    transition: opacity 0.2s ease-in;
+    display: flex;
+    justify-content: center;
+    opacity: 0.7;
+  }
+
+  .headerLink:hover {
+    opacity: 0.8;
+  }
+
+  .headerLink.active {
+    position: relative;
+    opacity: 1;
+    transition: opacity 0s ease-in;
+  }
+
+  .headerLink.active::before {
+    content: "";
+    position: relative;
+    display: flex;
+    left: 0px;
+    height: auto;
+    width: 4px;
+    margin-right: 8px;
+    background-color: var(--text_header);
+  }
+  //конец выпадающего меню
+}
+
+@media screen and (max-width: 430px) {
+  .container {
+    padding: 0px 12px;
+  }
+
+  .logo {
+    color: var(--icon_header);
+    width: 40px;
+    height: 40px;
+  }
+
+  .textLogo {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text_header);
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .languageButton {
+    display: none;
+  }
+
+  .themeButton {
+    display: none;
+  }
+}

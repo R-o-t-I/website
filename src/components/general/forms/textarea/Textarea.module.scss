@@ -1,0 +1,33 @@
+.container {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 80px;
+  height: 160px;
+  border-radius: 20px;
+  padding: 24px;
+  font-size: 24px;
+  background: var(--background_input);
+  color: var(--text_primary);
+}
+
+.container:focus {
+  outline: 2px solid var(--text_accent);
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 16px;
+    font-size: 20px;
+    height: 40px;
+    border-radius: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 12px;
+    font-size: 16px;
+    height: 40px;
+    border-radius: 16px;
+  }
+}

@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.container:hover {
+  opacity: 0.8;
+}
+
+.container:active {
+  opacity: 0.6;
+}
+
+.primary {
+  background: var(--background_button_accent);
+  color: var(--text_primary_reverse);
+}
+
+.secondary {
+}
+
+.tertiary {
+  background: none;
+  color: var(--text_secondary);
+  padding: 0px;
+}
+
+.outline {
+  outline: 2px solid var(--background_button_accent) !important;
+  color: var(--text_accent);
+}

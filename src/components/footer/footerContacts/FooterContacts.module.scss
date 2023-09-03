@@ -1,0 +1,52 @@
+.content {
+  width: 100%;
+}
+
+.header {
+  color: var(--text_header);
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  white-space: nowrap;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+}
+
+.infoItemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 200px;
+}
+
+.infoItemContainer:first-child {
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text_accent2);
+}
+
+.info {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--text_accent2);
+  cursor: pointer;
+}
+
+.info:hover {
+  opacity: 0.8;
+}
+
+.info:active {
+  opacity: 0.6;
+}

@@ -1,0 +1,155 @@
+.content {
+  width: 100%;
+  padding: 50px 0px;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 600;
+  color: var(--text_accent);
+  margin-bottom: 70px;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px;
+  background: var(--background_card);
+  color: var(--text_primary);
+  border-radius: 50px;
+  overflow: hidden;
+  gap: 24px;
+  width: calc((100% / 3) - 16px);
+  transition: transform 0.5s;
+}
+
+.item:hover {
+  transform: scale(105%);
+}
+
+.item:last-child {
+  background: var(--background_card_accent);
+  color: var(--text_primary_reverse);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.icon {
+  color: var(--icon_accent);
+  min-width: 36px;
+}
+
+.text {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.description {
+  color: var(--text_secondary);
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.descriptionNone {
+  display: none;
+}
+
+@media screen and (max-width: 1300px) {
+  .title {
+    font-size: 50px;
+  }
+
+  .item {
+    width: calc((100% / 2) - 12px);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .text {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .item {
+    width: 100%;
+    padding: 24px;
+    gap: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
