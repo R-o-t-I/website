@@ -1,4 +1,4 @@
-import Timline from "../../components/about/timeline/Timeline.jsx";
+import Timeline from "../../components/about/timeline/Timeline.jsx";
 import Title from "../../components/general/typography/title/Title.tsx";
 import style from "./about.module.scss";
 
@@ -15,10 +15,11 @@ const About = () => {
           пользователей и для ведущих платформ.
         </div>
       </div>
+
       <div>
         <Title>История студии</Title>
         <div className={style.timelineContainer}>
-          <Timline />
+          <Timeline />
         </div>
       </div>
     </div>

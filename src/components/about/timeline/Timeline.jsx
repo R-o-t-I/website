@@ -1,6 +1,6 @@
 import style from "./Timeline.module.scss";
 
-const Timline = () => {
+const Timeline = () => {
   return (
     <div className={style.content}>
       <div className={style.dateContainer}>
@@ -18,4 +18,4 @@ const Timline = () => {
   );
 };
 
-export default Timline;
+export default Timeline;

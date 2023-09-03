@@ -1,7 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-
-import { useTranslation } from "react-i18next";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import i18n from "../../language/i18n";
 
@@ -11,6 +9,8 @@ import ButtonTheme from "../buttonTheme/ButtonTheme";
 
 //Иконки
 import { ReactComponent as IconLogo } from "../../img/logo.svg";
+import NavbarItem from "./NavbarItem";
+import {useTranslation} from "react-i18next";
 
 const nav = [
   {
@@ -58,6 +58,7 @@ const Navbar = () => {
             <IconLogo className={style.logo} />
             <div className={style.textLogo}>SkyReglis Studio</div>
           </NavLink>
+
           <div className={style.afterMenu}>
             <nav
               className={
@@ -67,19 +68,10 @@ const Navbar = () => {
               }
             >
               <ul className={style.headerList}>
-                {nav.map((item) => (
-                  <li>
-                    <NavLink
-                      to={item.link}
-                      className={({ isActive }) =>
-                        isActive
-                          ? `${style.headerLink} ${style.active}`
-                          : style.headerLink
-                      }
-                    >
-                      {t(`${item.title}`)}
-                    </NavLink>
-                  </li>
+                {nav.map((item, index) => (
+                  <NavbarItem key={index} link={item.link}>
+                    {item.title}
+                  </NavbarItem>
                 ))}
               </ul>
             </nav>
