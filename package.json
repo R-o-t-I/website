@@ -11,6 +11,7 @@
     "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
+    "@types/react": "^18.2.21",
     "@vitejs/plugin-react-swc": "^3.3.2",
     "@vkontakte/vk-miniapps-deploy": "0.0.26",
     "rollup-plugin-compress-dist": "^1.1.0",

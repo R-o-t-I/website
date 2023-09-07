@@ -1,0 +1,73 @@
+.Select {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 20px;
+  font-size: 24px;
+  background: var(--background_input);
+  color: var(--text_primary);
+}
+
+.Select span {
+  padding: 24px 60px 24px 24px;
+  display: block;
+}
+
+.Select:focus {
+  border: 2px solid var(--text_accent);
+  border-radius: 20px 20px 0 0;
+}
+
+.up.Select:focus {
+  border-radius: 0 0 20px 20px;
+}
+
+.optionsList {
+  display: none;
+  position: absolute;
+  width: 100%;
+  border: 2px solid var(--text_accent);
+  overflow: hidden;
+  left: 0;
+}
+
+.Select:focus .optionsList {
+  display: block;
+}
+
+.down .optionsList {
+  border-radius: 0 0 20px 20px;
+}
+
+.up .optionsList {
+  border-radius: 20px 20px 0 0;
+  bottom: calc(100% - 1px);
+}
+
+@media screen and (max-width: 600px) {
+  .Select {
+    font-size: 20px;
+    border-radius: 16px;
+  }
+
+  .Select span {
+    padding: 16px;
+  }
+
+  .down .optionsList {
+    border-radius: 0 0 16px 16px;
+  }
+
+  .up .optionsList {
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .Select {
+    font-size: 16px;
+  }
+
+  .Select span {
+    padding: 12px;
+  }
+}
