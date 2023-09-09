@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className={style.footer}>
       <div className={style.content}>
         <div className={style.infoFooter}>
-          <FooterContacts />
+          {/*<FooterContacts />*/}
           <div className={style.infoFooterRight}>
             <FooterMenu />
             <FooterSocial />

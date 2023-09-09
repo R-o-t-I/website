@@ -25,38 +25,6 @@
   align-items: center;
 }
 
-.selectContainer::before {
-  content: "";
-  background: var(--icon_header);
-  position: absolute;
-  width: 10px;
-  height: 2px;
-  right: 30px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  transform: rotate(45deg);
-  pointer-events: none;
-}
-
-.selectContainer::after {
-  content: "";
-  background: var(--icon_header);
-  position: absolute;
-  width: 10px;
-  height: 2px;
-  right: 24px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  transform: rotate(-45deg);
-  pointer-events: none;
-}
-
-.selectContainer:focus {
-  outline: 2px solid var(--text_accent);
-}
-
 .sendContainer {
   display: flex;
   align-items: center;

@@ -13,36 +13,42 @@ import {
   TbMasksTheater,
   TbStars,
 } from "react-icons/tb";
+import TabsItem from "../../general/tabs/TabsItem";
 
 const tabs = [
   {
     title: "Все проекты",
-    selected: "all",
+    name: "all",
   },
   {
     title: "Сайты",
-    selected: "site",
+    name: "sites",
   },
   {
     title: "Приложения",
+    name: "apps",
   },
   {
     title: "Чат-боты",
+    name: "bots",
   },
   {
     title: "Веб-игры",
+    name: "games",
   },
   {
     title: "Маски",
+    name: "masks",
   },
   {
     title: "Прочее",
+    name: "other",
   },
 ];
 
 const projects = [
   {
-    id: "",
+    id: 0,
     link: "",
     type: "Игра",
     cover:
@@ -51,9 +57,10 @@ const projects = [
     title: "Вакцина",
     description:
       "Вакцина — игра-кликер, в которой тебе предстоит сражаться с вирусом, выполнять задания и занять верхушку топа!",
+    category: "games",
   },
   {
-    id: "",
+    id: 1,
     link: "",
     type: "Игра",
     cover:
@@ -62,9 +69,10 @@ const projects = [
     title: "Вакцина",
     description:
       "Вакцина — игра-кликер, в которой тебе предстоит сражаться с вирусом, выполнять задания и занять верхушку топа!",
+    category: "games",
   },
   {
-    id: "",
+    id: 2,
     link: "",
     type: "Игра",
     cover:
@@ -73,9 +81,10 @@ const projects = [
     title: "Вакцина",
     description:
       "Вакцина — игра-кликер, в которой тебе предстоит сражаться с вирусом, выполнять задания и занять верхушку топа!",
+    category: "games",
   },
   {
-    id: "",
+    id: 3,
     link: "",
     type: "Игра",
     cover:
@@ -84,11 +93,18 @@ const projects = [
     title: "Вакцина",
     description:
       "Вакцина — игра-кликер, в которой тебе предстоит сражаться с вирусом, выполнять задания и занять верхушку топа!",
+    category: "games",
   },
 ];
 
 const ProjectsSectionsHome = () => {
   const [selected, setSelected] = React.useState("all");
+
+  function getSelectedProjects() {
+    if (selected === "all") return projects;
+
+    return projects.filter((p) => p.category === selected);
+  }
 
   return (
     <div className={style.content}>
@@ -102,29 +118,31 @@ const ProjectsSectionsHome = () => {
         Наши творения
       </Title>
       <div className={style.tabsContainer}>
-        {tabs.map((item) => (
-          <div
-            selected={selected === `${item.selected}`}
-            onClick={() => setSelected(item.selected)}
-            className={({ isActive }) =>
-              isActive ? style.tabsItem : `${style.tabsItem} ${style.active}`
-            }
+        {tabs.map((item, index) => (
+          <TabsItem
+            key={index}
+            selected={selected === item.name}
+            onClick={() => setSelected(item.name)}
           >
             {item.title}
-          </div>
+          </TabsItem>
         ))}
       </div>
       <div className={style.projectsList}>
-        {projects.map((item, index) => (
-          <NavLink to={`/project/${index}`} className={style.projectItem}>
+        {getSelectedProjects().map((item) => (
+          <NavLink
+            key={item.id}
+            to={`/project/${item.id}`}
+            className={style.projectItem}
+          >
             <div className={style.typeContainer}>
               <div className={style.iconContainer}>
-                {item.type === "Сайт" && <TbDeviceDesktop size={20} />}
-                {item.type === "Приложение" && <TbApps size={20} />}
-                {item.type === "Чат-бот" && <TbRobot size={20} />}
-                {item.type === "Игра" && <TbDeviceGamepad2 size={20} />}
-                {item.type === "Маска" && <TbMasksTheater size={20} />}
-                {item.type === "Другое" && <TbStars size={20} />}
+                {item.category === "sites" && <TbDeviceDesktop size={20} />}
+                {item.category === "apps" && <TbApps size={20} />}
+                {item.category === "bots" && <TbRobot size={20} />}
+                {item.category === "games" && <TbDeviceGamepad2 size={20} />}
+                {item.category === "masks" && <TbMasksTheater size={20} />}
+                {item.category === "other" && <TbStars size={20} />}
               </div>
               <div className={style.type}>{item.type}</div>
             </div>

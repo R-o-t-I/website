@@ -1,25 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import style from "./TabsItem.module.scss";
 
 interface TitleProps {
-  children: React.ReactNode,
-  className?: string,
-  selected: string
+  children: React.ReactNode;
+  selected: boolean;
 }
 
-const TabsItem = ({children, className, selected,  ...props} : TitleProps) => {
-
-    return (
-        <div
-          className={`
+const TabsItem = ({ children, selected, ...props }: TitleProps) => {
+  return (
+    <div
+      className={`
             ${style.container}
-            ${selected === "" && style.active}
+            ${selected && style.active}
           `}
-          {...props}
-        >
-          {children}
-        </div>
-    );
-}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default TabsItem;

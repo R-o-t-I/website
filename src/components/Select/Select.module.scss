@@ -21,6 +21,46 @@
   border-radius: 0 0 20px 20px;
 }
 
+.Select::before {
+  content: "";
+  background: var(--icon_header);
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  right: 30px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotate(45deg);
+  pointer-events: none;
+  transition: .2s;
+}
+
+.Select::after {
+  content: "";
+  background: var(--icon_header);
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  right: 24px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transform: rotate(-45deg);
+  pointer-events: none;
+  transition: .2s;
+}
+
+.Select:focus:before {
+  rotate: 90deg;
+  transition: .2s;
+}
+
+.Select:focus:after {
+  rotate: -90deg;
+  transition: .2s;
+}
+
 .optionsList {
   display: none;
   position: absolute;
