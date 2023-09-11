@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./Select.module.scss";
 import Option from "./Option";
-import useToBottomWindow from "../../hooks/useToBottomWindow";
+import useToBottomWindow from "../../../../hooks/useToBottomWindow";
 
 interface SelectProps {
   options: string[];

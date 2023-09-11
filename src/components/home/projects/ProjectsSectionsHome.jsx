@@ -58,7 +58,7 @@ const ProjectsSectionsHome = () => {
           {
             id: 0,
             link: "",
-            type: "Игра",
+            type: "Веб-игра",
             cover:
               "https://sun9-64.userapi.com/impf/WhcaXsVb1gP3OhkP1JS8UNuM1KnQ3G6sOpoZrg/8ozdt8IkogE.jpg?size=1074x480&quality=90&crop=0,0,1120,501&sign=9e944ed1dd713e45281c0dd2eaafcbdd",
             logo: "https://sun9-72.userapi.com/impf/cBa_G3INl043egztPUT6o5FE5wT5TI4g-TB8qw/jMu9l68B4iA.jpg?size=288x288&quality=90&sign=9d0818d14f49ae0da6006aad057ca4bc",
@@ -70,7 +70,7 @@ const ProjectsSectionsHome = () => {
           {
             id: 1,
             link: "",
-            type: "Игра",
+            type: "Веб-игра",
             cover:
               "https://sun9-64.userapi.com/impf/WhcaXsVb1gP3OhkP1JS8UNuM1KnQ3G6sOpoZrg/8ozdt8IkogE.jpg?size=1074x480&quality=90&crop=0,0,1120,501&sign=9e944ed1dd713e45281c0dd2eaafcbdd",
             logo: "https://sun9-72.userapi.com/impf/cBa_G3INl043egztPUT6o5FE5wT5TI4g-TB8qw/jMu9l68B4iA.jpg?size=288x288&quality=90&sign=9d0818d14f49ae0da6006aad057ca4bc",
@@ -82,7 +82,7 @@ const ProjectsSectionsHome = () => {
           {
             id: 2,
             link: "",
-            type: "Игра",
+            type: "Веб-игра",
             cover:
               "https://sun9-64.userapi.com/impf/WhcaXsVb1gP3OhkP1JS8UNuM1KnQ3G6sOpoZrg/8ozdt8IkogE.jpg?size=1074x480&quality=90&crop=0,0,1120,501&sign=9e944ed1dd713e45281c0dd2eaafcbdd",
             logo: "https://sun9-72.userapi.com/impf/cBa_G3INl043egztPUT6o5FE5wT5TI4g-TB8qw/jMu9l68B4iA.jpg?size=288x288&quality=90&sign=9d0818d14f49ae0da6006aad057ca4bc",
@@ -94,7 +94,7 @@ const ProjectsSectionsHome = () => {
           {
             id: 3,
             link: "",
-            type: "Игра",
+            type: "Веб-игра",
             cover:
               "https://sun9-64.userapi.com/impf/WhcaXsVb1gP3OhkP1JS8UNuM1KnQ3G6sOpoZrg/8ozdt8IkogE.jpg?size=1074x480&quality=90&crop=0,0,1120,501&sign=9e944ed1dd713e45281c0dd2eaafcbdd",
             logo: "https://sun9-72.userapi.com/impf/cBa_G3INl043egztPUT6o5FE5wT5TI4g-TB8qw/jMu9l68B4iA.jpg?size=288x288&quality=90&sign=9d0818d14f49ae0da6006aad057ca4bc",

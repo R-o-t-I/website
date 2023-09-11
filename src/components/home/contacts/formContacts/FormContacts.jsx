@@ -2,8 +2,8 @@ import React from "react";
 import Button from "../../../general/button/Button.tsx";
 import Input from "../../../general/forms/input/Input.tsx";
 import Textarea from "../../../general/forms/textarea/Textarea.tsx";
-import Select from "../../../Select/Select";
-import Option from "../../../Select/Option";
+import Select from "../../../general/forms/Select/Select.tsx";
+import Option from "../../../general/forms/Select/Option.tsx";
 import style from "./FormContacts.module.scss";
 
 //Иконки

@@ -13,7 +13,7 @@
 }
 
 .Select:focus {
-  border: 2px solid var(--text_accent);
+  outline: 2px solid var(--text_accent);
   border-radius: 20px 20px 0 0;
 }
 
@@ -33,7 +33,7 @@
   margin: auto;
   transform: rotate(45deg);
   pointer-events: none;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .Select::after {
@@ -48,24 +48,24 @@
   margin: auto;
   transform: rotate(-45deg);
   pointer-events: none;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .Select:focus:before {
   rotate: 90deg;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .Select:focus:after {
   rotate: -90deg;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .optionsList {
   display: none;
   position: absolute;
   width: 100%;
-  border: 2px solid var(--text_accent);
+  outline: 2px solid var(--text_accent);
   overflow: hidden;
   left: 0;
 }

@@ -10,9 +10,9 @@ const TabsItem = ({ children, selected, ...props }: TitleProps) => {
   return (
     <div
       className={`
-            ${style.container}
-            ${selected && style.active}
-          `}
+        ${style.container}
+        ${selected && style.active}
+      `}
       {...props}
     >
       {children}
