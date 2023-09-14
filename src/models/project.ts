@@ -1,4 +1,4 @@
-type ProjectTypes = "Игра" | "Сайт" | "Бот";
+type ProjectTypes = "Веб-игра" | "Сайт" | "Бот";
 type ProjectCategory = "games" | "sites" | "bots";
 
 interface IProject {

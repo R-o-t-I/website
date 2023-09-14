@@ -1,15 +1,10 @@
-import projectsState from "../storage/atoms/projects";
 import { useRecoilState } from "recoil";
-import IProject from "../models/project";
+import { useProjectsSelector } from "../storage/selectors/projects";
 
 function useProjects() {
-  const [state, setState] = useRecoilState(projectsState);
+  const [state, setState] = useRecoilState(useProjectsSelector);
 
-  function setProjects(projects: IProject[]) {
-    setState({ ...state, projects: projects });
-  }
-
-  return [state.projects, setProjects];
+  return [state, setState];
 }
 
 export default useProjects;

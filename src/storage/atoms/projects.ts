@@ -1,7 +1,7 @@
 import { atom } from "recoil";
 import IProject from "../../models/project";
 
-interface IProjectsState {
+export interface IProjectsState {
   projects?: IProject[];
 }
 
