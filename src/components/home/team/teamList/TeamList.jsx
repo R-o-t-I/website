@@ -47,17 +47,19 @@ const team = [
 
 const TeamList = () => {
   return (
-    <div className={style.listTeam}>
-      {team.map((item) => (
-        <div className={style.teamItem}>
-          <div className={style.avatarContainer}>
-            <img src={item.avatar} />
+    <>
+      <div className={style.listTeam}>
+        {team.map((item) => (
+          <div className={style.teamItem}>
+            <div className={style.avatarContainer}>
+              <img src={item.avatar} />
+            </div>
+            <div className={style.name}>{item.name}</div>
+            <div className={style.position}>{item.position}</div>
           </div>
-          <div className={style.name}>{item.name}</div>
-          <div className={style.position}>{item.position}</div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 
