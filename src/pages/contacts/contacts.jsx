@@ -13,7 +13,7 @@ const Contacts = () => {
         <div className={style.content}>
           <FormContacts />
           <div className={style.content2}>
-            <FooterContacts />
+            {/*<FooterContacts />*/}
             <FooterSocial />
           </div>
         </div>

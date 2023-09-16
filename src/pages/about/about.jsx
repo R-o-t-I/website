@@ -1,4 +1,4 @@
-import Timeline from "../../components/about/timeline/Timeline.jsx";
+import Timeline from "../../components/about/timeline/Timeline.tsx";
 import Title from "../../components/general/typography/title/Title.tsx";
 import style from "./about.module.scss";
 

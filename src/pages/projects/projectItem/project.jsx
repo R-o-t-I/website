@@ -68,24 +68,6 @@ const Project = () => {
           <div className={style.descriptions}>{project?.description}</div>
           <div>История идеи</div>
           <div className={style.stackContainer}>Стек: </div>
-
-          <Gallery>
-            <img
-              src={
-                "https://i.pinimg.com/originals/82/be/7e/82be7ee12d79e1c80b87541e49343cea.jpg"
-              }
-            />
-            <img
-              src={
-                "https://i.pinimg.com/originals/82/be/7e/82be7ee12d79e1c80b87541e49343cea.jpg"
-              }
-            />
-            <img
-              src={
-                "https://i.pinimg.com/originals/82/be/7e/82be7ee12d79e1c80b87541e49343cea.jpg"
-              }
-            />
-          </Gallery>
         </div>
 
         <div className={style.infoContainer}>
@@ -98,6 +80,23 @@ const Project = () => {
           </div>
         </div>
       </div>
+      <Gallery>
+        <img
+          src={
+            "https://i.pinimg.com/originals/82/be/7e/82be7ee12d79e1c80b87541e49343cea.jpg"
+          }
+        />
+        <img
+          src={
+            "https://i.pinimg.com/originals/82/be/7e/82be7ee12d79e1c80b87541e49343cea.jpg"
+          }
+        />
+        <img
+          src={
+            "https://i.pinimg.com/originals/82/be/7e/82be7ee12d79e1c80b87541e49343cea.jpg"
+          }
+        />
+      </Gallery>
     </div>
   );
 };
