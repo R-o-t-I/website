@@ -58,7 +58,6 @@ export const useProjectsSelector = selector<IProject[] | undefined>({
           category: "games",
         },
       ];
-      console.log("testik");
       setState({
         ...state,
         projects: projects,
