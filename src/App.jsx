@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
@@ -11,8 +12,11 @@ import Team from "./pages/team/team";
 import Contacts from "./pages/contacts/contacts";
 
 import ScrollToTop from "./utils/scrollToTop";
+import Modal from "./components/general/modal/Modal";
 
 function App() {
+  const [modalActive, setModaleActive] = useState(true);
+
   return (
     <div className="App">
       <Router>
@@ -29,6 +33,22 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
         <Footer />
+
+        <Modal
+          id="userTeamModal"
+          active={modalActive}
+          setActive={setModaleActive}
+        >
+          <div>
+            <div>
+              <div /*className={style.name}*/>Александр Тихонович</div>
+              <div /*className={style.position}*/>Менеджер проектов</div>
+            </div>
+            <div /*className={style.avatarContainer}*/>
+              <img /*className={style.avatar}*/ />
+            </div>
+          </div>
+        </Modal>
       </Router>
     </div>
   );
