@@ -1,3 +1,4 @@
+import React from "react";
 import style from "./project.module.scss";
 import { NavLink, useParams } from "react-router-dom";
 import useProjectById from "../../../hooks/useProjectById";
@@ -14,10 +15,17 @@ import {
   TbStars,
 } from "react-icons/tb";
 import Gallery from "../../../components/general/gallery/Gallery";
+import Tabs from "../../../components/general/tabs/Tabs";
+import TabsItem from "../../../components/general/tabs/TabsItem";
 
 const Project = () => {
   const { id } = useParams();
   const project = useProjectById(parseInt(id));
+  const [activeTab, setActiveTab] = React.useState("android");
+
+  function changeTab(e) {
+    setActiveTab(e.currentTarget.dataset.device || "android");
+  }
 
   return (
     <div className={style.container}>
@@ -80,22 +88,35 @@ const Project = () => {
           </div>
         </div>
       </div>
+
+      <Tabs>
+        <TabsItem
+          selected={activeTab === "android"}
+          data-device={"android"}
+          onClick={changeTab}
+        >
+          Android
+        </TabsItem>
+        <TabsItem
+          selected={activeTab === "ios"}
+          data-device={"ios"}
+          onClick={changeTab}
+        >
+          IOS
+        </TabsItem>
+        <TabsItem
+          selected={activeTab === "desktop"}
+          data-device={"desktop"}
+          onClick={changeTab}
+        >
+          Desktop
+        </TabsItem>
+      </Tabs>
+
       <Gallery>
-        <img
-          src={
-            "https://i.pinimg.com/originals/82/be/7e/82be7ee12d79e1c80b87541e49343cea.jpg"
-          }
-        />
-        <img
-          src={
-            "https://i.pinimg.com/originals/82/be/7e/82be7ee12d79e1c80b87541e49343cea.jpg"
-          }
-        />
-        <img
-          src={
-            "https://i.pinimg.com/originals/82/be/7e/82be7ee12d79e1c80b87541e49343cea.jpg"
-          }
-        />
+        {project.screenshots[activeTab].map((i, index) => (
+          <img key={index} src={i} />
+        ))}
       </Gallery>
     </div>
   );
