@@ -9,9 +9,7 @@ interface IMainState {
 
 const mainState = atom<IMainState>({
   key: "mainState",
-  default: {
-    modal: <TeamMemberProfileModal />,
-  },
+  default: {},
 });
 
 export default mainState;

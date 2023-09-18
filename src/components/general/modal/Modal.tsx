@@ -20,7 +20,6 @@ const Modal = ({ onClose, children, className, ...props }: ModalProps) => {
         setHidden(true);
       }}
       onAnimationEnd={() => {
-        console.log("animate");
         if (hidden) onClose();
       }}
     >
