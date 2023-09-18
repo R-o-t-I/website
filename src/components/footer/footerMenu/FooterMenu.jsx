@@ -29,8 +29,8 @@ const FooterMenu = () => {
     <div className={style.content}>
       <div className={style.header}>Меню</div>
       <ul className={style.listMenu}>
-        {menu.map((item) => (
-          <li>
+        {menu.map((item, index) => (
+          <li key={index}>
             <NavLink className={style.title} to={item.link}>
               {item.title}
             </NavLink>

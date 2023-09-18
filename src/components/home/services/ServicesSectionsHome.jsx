@@ -49,8 +49,8 @@ const ServicesSectionsHome = () => {
     <div className={style.content}>
       <Title>Создаем для наших клиентов</Title>
       <div className={style.list}>
-        {services.map((item) => (
-          <div className={style.item}>
+        {services.map((item, index) => (
+          <div key={index} className={style.item}>
             <div className={style.header}>
               <div className={style.icon}>{item.icon}</div>
               <div className={style.text}>{item.title}</div>

@@ -1,7 +1,11 @@
 import style from "./TeamList.module.scss";
+import { useRecoilState } from "recoil";
+import { useModal } from "../../../../storage/selectors/main";
+import TeamMemberProfileModal from "../../../../modals/TeamMemberProfileModal";
 
 const team = [
   {
+    id: 1,
     avatar:
       "https://cdn.icon-icons.com/icons2/3708/PNG/512/man_person_people_avatar_icon_230017.png",
     name: "Александр Тихонович",
@@ -9,6 +13,7 @@ const team = [
     vk: "https://vk.com/alexander_tihonovich",
   },
   {
+    id: 2,
     avatar:
       "https://cdn.icon-icons.com/icons2/3708/PNG/512/man_person_people_avatar_icon_230017.png",
     name: "Артем Петрунин",
@@ -16,6 +21,7 @@ const team = [
     vk: "",
   },
   {
+    id: 3,
     avatar:
       "https://cdn.icon-icons.com/icons2/3708/PNG/512/man_person_people_avatar_icon_230017.png",
     name: "Евгений Руденок",
@@ -23,6 +29,7 @@ const team = [
     vk: "",
   },
   {
+    id: 4,
     avatar:
       "https://cdn.icon-icons.com/icons2/3708/PNG/512/man_person_people_avatar_icon_230017.png",
     name: "Анна Безуглова",
@@ -30,6 +37,7 @@ const team = [
     vk: "",
   },
   {
+    id: 5,
     avatar:
       "https://cdn.icon-icons.com/icons2/3708/PNG/512/man_person_people_avatar_icon_230017.png",
     name: "Владислав Мельничук",
@@ -37,6 +45,7 @@ const team = [
     vk: "",
   },
   {
+    id: 6,
     avatar:
       "https://cdn.icon-icons.com/icons2/3708/PNG/512/man_person_people_avatar_icon_230017.png",
     name: "Любовь к работе",
@@ -46,11 +55,21 @@ const team = [
 ];
 
 const TeamList = () => {
+  const [, setModal] = useRecoilState(useModal);
+
+  function toMemberProfile(member) {
+    setModal(<TeamMemberProfileModal member={member} />);
+  }
+
   return (
     <>
       <div className={style.listTeam}>
         {team.map((item) => (
-          <div className={style.teamItem}>
+          <div
+            key={item.id}
+            className={style.teamItem}
+            onClick={() => toMemberProfile(item)}
+          >
             <div className={style.avatarContainer}>
               <img src={item.avatar} />
             </div>

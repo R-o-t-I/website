@@ -22,9 +22,9 @@ export const useProjectsSelector = selector<IProject[] | undefined>({
           category: "games",
           screenshots: {
             android: [
-              "https://faqkontakt.ru/wp-content/uploads/2021/08/Screenshot_60.jpg",
-              "https://faqkontakt.ru/wp-content/uploads/2021/08/Screenshot_60.jpg",
-              "https://faqkontakt.ru/wp-content/uploads/2021/08/Screenshot_60.jpg",
+              "https://image.winudf.com/v2/image1/Y29tLnZrb250YWt0ZS5hbmRyb2lkX3NjcmVlbl8zXzE2MTU0MjcxODhfMDk2/screen-3.jpg?fakeurl=1",
+              "https://image.winudf.com/v2/image1/Y29tLnZrb250YWt0ZS5hbmRyb2lkX3NjcmVlbl8zXzE2MTU0MjcxODhfMDk2/screen-3.jpg?fakeurl=1",
+              "https://image.winudf.com/v2/image1/Y29tLnZrb250YWt0ZS5hbmRyb2lkX3NjcmVlbl8zXzE2MTU0MjcxODhfMDk2/screen-3.jpg?fakeurl=1",
             ],
             ios: [
               "https://trashbox.ru/ifiles/1094627_4d6736_6-1/kak-ustanovit-ios-13-i-kakoj-v-etom-smysl-1.jpeg",

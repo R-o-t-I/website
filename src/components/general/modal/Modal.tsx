@@ -1,22 +1,33 @@
-import React from 'react';
-import style from './Modal.module.scss';
+import React from "react";
+import style from "./Modal.module.scss";
 
 interface ModalProps {
-  children: React.ReactNode,
-  className?: string,
-  active: boolean;
-  setActive: boolean;
+  children: React.ReactNode;
+  className?: string;
+  onClose: () => any;
 }
 
-const Modal = ({active, setActive, children, className,  ...props} : ModalProps) => {
+const Modal = ({ onClose, children, className, ...props }: ModalProps) => {
+  const [hidden, setHidden] = React.useState(false);
+
   return (
     <div
-      className={active ? `${style.container} ${style.active}` : style.container}
+      className={
+        hidden ? `${style.container} ${style.hidden}` : style.container
+      }
       {...props}
-      onClick={() => setActive(false)}
+      onClick={() => {
+        setHidden(true);
+      }}
+      onAnimationEnd={() => {
+        console.log("animate");
+        if (hidden) onClose();
+      }}
     >
-      <div className={active ? `${style.contentContainer} ${style.active}` : style.contentContainer}>
-        <div className={style.content} onClick={e => e.stopPropagation()}>{children}</div>
+      <div className={style.contentContainer}>
+        <div className={style.content} onClick={(e) => e.stopPropagation()}>
+          {children}
+        </div>
         <div className={style.buttonCloseContainer}>
           <div className={style.buttonClose} />
         </div>

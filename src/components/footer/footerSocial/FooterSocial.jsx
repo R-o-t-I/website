@@ -24,8 +24,13 @@ const FooterSocial = () => {
     <div className={style.content}>
       <div className={style.header}>Соц. сети</div>
       <div className={style.listSocial}>
-        {social.map((item) => (
-          <a className={style.title} href={item.link} target="_blank">
+        {social.map((item, index) => (
+          <a
+            key={index}
+            className={style.title}
+            href={item.link}
+            target="_blank"
+          >
             {item.title}
           </a>
         ))}

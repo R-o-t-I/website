@@ -11,7 +11,13 @@ const Gallery = ({ children, scrollStep = 500 }: GalleryProps) => {
   const [scrollLeft, setScrollLeft] = React.useState<number>();
   let scrollRight = (gallery?.current?.clientWidth || 0) + (scrollLeft || 0);
 
-  function onScrollGallery() {
+  React.useEffect(() => {
+    if (!scrollLeft) {
+      onScrollChange();
+    }
+  }, []);
+
+  function onScrollChange() {
     setScrollLeft(gallery?.current?.scrollLeft || 0);
   }
 
@@ -52,7 +58,7 @@ const Gallery = ({ children, scrollStep = 500 }: GalleryProps) => {
 
   return (
     <div className={style.GalleryContainer}>
-      <div ref={gallery} className={style.Gallery} onScroll={onScrollGallery}>
+      <div ref={gallery} className={style.Gallery} onScroll={onScrollChange}>
         <div>{children}</div>
       </div>
 
@@ -65,7 +71,7 @@ const Gallery = ({ children, scrollStep = 500 }: GalleryProps) => {
           onMouseLeave={buttonMouse}
         />
       )}
-      {scrollRight !== gallery?.current?.scrollWidth && (
+      {scrollRight !== gallery?.current?.children[0].clientWidth && (
         <button
           className={style.right}
           data-direction={"right"}

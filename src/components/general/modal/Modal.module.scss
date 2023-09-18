@@ -1,36 +1,57 @@
+@keyframes showContainer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .container {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   position: fixed;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.5s;
   gap: 12px;
+  transition: .5s;
+  animation: showContainer linear .5s;
 }
 
-.container.active {
-  transform: scale(1);
-  opacity: 1;
-  pointer-events: all;
+@keyframes empty {
+  /*Для срабатывания события onAnimationEnd при закрытии модалки*/
+}
+
+.container.hidden {
+  pointer-events: none;
+  opacity: 0;
+  animation: empty linear .5s;
+}
+
+.hidden .contentContainer {
+  scale: .5;
+  transition: 0.4s;
+}
+
+@keyframes showContent {
+  0% {
+    scale: .5;
+  }
+  100% {
+    scale: 1;
+  }
 }
 
 .contentContainer {
-  transform: scale(0.5);
-  transition: 0.4s;
   position: relative;
   width: 70% !important;
   max-height: 70%;
-}
-
-.contentContainer.active {
-  transform: scale(1);
+  animation: showContent linear .4s;
 }
 
 .content {
@@ -44,7 +65,7 @@
   display: flex;
   align-items: center;
   justify-self: center;
-  top: 0px;
+  top: 0;
   right: -62px;
   background: var(--background_page);
   width: 50px;
