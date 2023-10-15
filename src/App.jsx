@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import Order from "./components/order/Order";
 
 import Home from "./pages/home/home";
 import About from "./pages/about/about";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
+        {/*<Order />*/}
         <Footer />
         {modal}
       </Router>

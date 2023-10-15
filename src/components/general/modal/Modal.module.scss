@@ -19,8 +19,8 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  transition: .5s;
-  animation: showContainer linear .5s;
+  transition: 0.2s;
+  animation: showContainer linear 0.2s;
 }
 
 @keyframes empty {
@@ -30,17 +30,17 @@
 .container.hidden {
   pointer-events: none;
   opacity: 0;
-  animation: empty linear .5s;
+  animation: empty linear 0.2s;
 }
 
 .hidden .contentContainer {
-  scale: .5;
-  transition: 0.4s;
+  scale: 0.5;
+  transition: 0.2s;
 }
 
 @keyframes showContent {
   0% {
-    scale: .5;
+    scale: 0.5;
   }
   100% {
     scale: 1;
@@ -51,7 +51,7 @@
   position: relative;
   width: 70% !important;
   max-height: 70%;
-  animation: showContent linear .4s;
+  animation: showContent linear 0.2s;
 }
 
 .content {

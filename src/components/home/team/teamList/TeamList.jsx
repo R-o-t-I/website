@@ -1,7 +1,7 @@
 import style from "./TeamList.module.scss";
 import { useRecoilState } from "recoil";
 import { useModal } from "../../../../storage/selectors/main";
-import TeamMemberProfileModal from "../../../../modals/TeamMemberProfileModal";
+import TeamMemberProfileModal from "../../../../modals/TeamMemberProfileModal/TeamMemberProfileModal";
 
 const team = [
   {

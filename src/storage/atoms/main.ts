@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 import React from "react";
-import TeamMemberProfileModal from "../../modals/TeamMemberProfileModal";
+import TeamMemberProfileModal from "../../modals/TeamMemberProfileModal/TeamMemberProfileModal";
 
 interface IMainState {
   modal?: React.ReactNode;
