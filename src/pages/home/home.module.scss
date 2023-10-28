@@ -18,3 +18,28 @@
     padding: 0px 12px;
   }
 }
+
+.one {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  gap: 24px;
+}
+
+.imgContainer {
+  width: 200px;
+  height: 70%;
+  background: rebeccapurple;
+  transition: all 1s;
+  border-radius: 50px;
+}
+
+.imgContainer:hover {
+  transform: scale(105%);
+  transition: all 1s;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
