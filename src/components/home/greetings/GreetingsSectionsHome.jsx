@@ -1,3 +1,5 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import style from "./GreetingsSectionsHome.module.scss";
 
 import devices from "../../../img/devices.png";
@@ -10,7 +12,14 @@ const GreetingsSectionsHome = () => {
         ваших проектов для максимальной прибыли
       </div>
       <div className={style.imagesContainer}>
-        <img src={devices} className={style.imgDevices} />
+        <LazyLoadImage
+          src={devices}
+          effect="blur"
+          className={style.imgDevices}
+          wrapperProps={{
+            style: { transitionDelay: "1s" },
+          }}
+        />
       </div>
     </div>
   );

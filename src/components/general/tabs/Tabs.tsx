@@ -6,7 +6,7 @@ interface TabsProps {
 }
 
 const Tabs = ({ children }: TabsProps) => {
-  return <div className={style.Tabs}>{children}</div>;
+  return <div className={style.container}>{children}</div>;
 };
 
 export default Tabs;

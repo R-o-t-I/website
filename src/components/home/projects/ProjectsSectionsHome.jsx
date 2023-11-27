@@ -14,6 +14,7 @@ import {
   TbStars,
 } from "react-icons/tb";
 import TabsItem from "../../general/tabs/TabsItem";
+import Tabs from "../../general/tabs/Tabs";
 import useProjects from "../../../hooks/useProjects";
 
 const tabs = [
@@ -69,7 +70,7 @@ const ProjectsSectionsHome = () => {
       >
         Наши творения
       </Title>
-      <div className={style.tabsContainer}>
+      <Tabs>
         {tabs.map((item, index) => (
           <TabsItem
             key={index}
@@ -79,7 +80,7 @@ const ProjectsSectionsHome = () => {
             {item.title}
           </TabsItem>
         ))}
-      </div>
+      </Tabs>
       <div className={style.projectsList}>
         {getSelectedProjects()?.map((item) => (
           <NavLink
@@ -112,6 +113,9 @@ const ProjectsSectionsHome = () => {
             </div>
           </NavLink>
         ))}
+        {getSelectedProjects()?.length === 0 && (
+          <div>Пожалуйста, подождите. Загружаем проекты...</div>
+        )}
       </div>
     </div>
   );
