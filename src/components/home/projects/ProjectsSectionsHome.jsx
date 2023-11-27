@@ -39,6 +39,10 @@ const tabs = [
     name: "games",
   },
   {
+    title: "Иллюстрации",
+    name: "illustrations",
+  },
+  {
     title: "Маски",
     name: "masks",
   },
@@ -114,7 +118,10 @@ const ProjectsSectionsHome = () => {
           </NavLink>
         ))}
         {getSelectedProjects()?.length === 0 && (
-          <div>Пожалуйста, подождите. Загружаем проекты...</div>
+          <div className={style.placeholder}>
+            <div className={style.loader} />
+            Пожалуйста, подождите. Загружаем проекты...
+          </div>
         )}
       </div>
     </div>

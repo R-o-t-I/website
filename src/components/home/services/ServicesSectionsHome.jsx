@@ -9,6 +9,7 @@ import {
   TbDeviceGamepad2,
   TbMasksTheater,
   TbStars,
+  TbPalette,
 } from "react-icons/tb";
 
 const services = [
@@ -31,6 +32,12 @@ const services = [
     icon: <TbDeviceGamepad2 size={36} />,
     title: "Веб-игры",
     description: "",
+  },
+
+  {
+    icon: <TbPalette size={36} />,
+    title: "Иллюстрации",
+    description: "статичные, анимированные",
   },
   {
     icon: <TbMasksTheater size={36} />,

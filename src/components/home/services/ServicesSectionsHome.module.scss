@@ -11,10 +11,11 @@
 }
 
 .list {
-  display: flex;
+  display: grid;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .item {
@@ -26,9 +27,11 @@
   color: var(--text_primary);
   border-radius: 50px;
   overflow: hidden;
-  gap: 24px;
-  width: calc((100% / 3) - 16px);
   transition: transform 0.5s;
+}
+
+.item:last-child {
+  grid-area: 2 / 3 / 2 / 5;
 }
 
 .item:hover {
