@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Title from "../../general/typography/title/Title.tsx";
 import Button from "../../general/button/Button.tsx";
 import { NavLink } from "react-router-dom";
@@ -16,6 +16,9 @@ import {
 import TabsItem from "../../general/tabs/TabsItem";
 import Tabs from "../../general/tabs/Tabs";
 import useProjects from "../../../hooks/useProjects";
+import axios from "axios";
+import Snackbar from "../../general/snackbar/Snackbar";
+import useSnackbar from "../../../hooks/useSnackbar";
 
 const tabs = [
   {
@@ -52,9 +55,43 @@ const tabs = [
   },
 ];
 
+const categories = {
+  sites: {
+    icon: <TbDeviceDesktop size={20} />,
+    ru: "Сайт",
+    en: "Site",
+  },
+  apps: {
+    icon: <TbApps size={20} />,
+    ru: "Сервис",
+    en: "App",
+  },
+  bots: {
+    icon: <TbRobot size={20} />,
+    ru: "Бот",
+    en: "Bot",
+  },
+  games: {
+    icon: <TbDeviceGamepad2 size={20} />,
+    ru: "Игра",
+    en: "Game",
+  },
+  masks: {
+    icon: <TbMasksTheater size={20} />,
+    ru: "Маска",
+    en: "Mask",
+  },
+  other: {
+    icon: <TbStars size={20} />,
+    ru: "Другое",
+    en: "Other",
+  },
+};
+
 const ProjectsSectionsHome = () => {
   const [selected, setSelected] = React.useState("all");
-  const [projects] = useProjects();
+  const [projects, setProjects] = useProjects();
+  const [, setSnackbar] = useSnackbar();
 
   function getSelectedProjects() {
     if (!projects) return;
@@ -85,6 +122,7 @@ const ProjectsSectionsHome = () => {
           </TabsItem>
         ))}
       </Tabs>
+
       <div className={style.projectsList}>
         {getSelectedProjects()?.map((item) => (
           <NavLink
@@ -94,21 +132,16 @@ const ProjectsSectionsHome = () => {
           >
             <div className={style.typeContainer}>
               <div className={style.iconContainer}>
-                {item.category === "sites" && <TbDeviceDesktop size={20} />}
-                {item.category === "apps" && <TbApps size={20} />}
-                {item.category === "bots" && <TbRobot size={20} />}
-                {item.category === "games" && <TbDeviceGamepad2 size={20} />}
-                {item.category === "masks" && <TbMasksTheater size={20} />}
-                {item.category === "other" && <TbStars size={20} />}
+                {categories[item.category].icon}
               </div>
-              <div className={style.type}>{item.type}</div>
+              <div className={style.type}>{categories[item.category].ru}</div>
             </div>
             <div className={style.coverContainer}>
               <img src={item.cover} className={style.cover} />
             </div>
             <div className={style.infoItemContainer}>
               <div className={style.logoContainer}>
-                <img src={item.logo} className={style.logo} />
+                <img src={item.photo} className={style.logo} />
               </div>
               <div className={style.infoContainer}>
                 <div className={style.titleProject}>{item.title}</div>
@@ -117,11 +150,16 @@ const ProjectsSectionsHome = () => {
             </div>
           </NavLink>
         ))}
-        {getSelectedProjects()?.length === 0 && (
+
+        {!getSelectedProjects() && (
           <div className={style.placeholder}>
             <div className={style.loader} />
             Пожалуйста, подождите. Загружаем проекты...
           </div>
+        )}
+
+        {getSelectedProjects()?.length === 0 && (
+          <div className={style.placeholder}>Ниичего не найдено</div>
         )}
       </div>
     </div>

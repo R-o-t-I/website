@@ -1,20 +1,42 @@
 //https://html5css.ru/howto/howto_js_snackbar.php – инструкция
 
-
-import React from 'react';
-import style from './Snackbar.module.scss';
+import React, { useEffect, useState } from "react";
+import style from "./Snackbar.module.scss";
+import useSnackbar from "../../../hooks/useSnackbar";
 
 interface SnackbarProps {
-  children: React.ReactNode,
-  after: React.ReactNode,
-  className?: string,
+  children: React.ReactNode;
+  after?: React.ReactNode;
+  className?: string;
+  duration?: number;
+  onClose?: () => void;
 }
 
-const Snackbar = ({children, after, className,  ...props} : SnackbarProps) => {
+const Snackbar = ({
+  children,
+  after,
+  className,
+  onClose,
+  duration = 3000,
+  ...props
+}: SnackbarProps) => {
+  const [visibility, setVisibility] = useState("show");
+  const [, setSnackbar] = useSnackbar();
+
+  useEffect(() => {
+    setTimeout(setVisibility, duration, "hidden");
+  }, []);
+
   return (
     <div
       id="snackbar"
-      className="snackbar"
+      className={`snackbar ${visibility}`}
+      onAnimationEnd={() => {
+        if (visibility === "hidden") {
+          onClose && onClose();
+          setSnackbar(null);
+        }
+      }}
       //className={style.container}
       {...props}
     >

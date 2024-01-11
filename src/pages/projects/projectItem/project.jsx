@@ -21,10 +21,10 @@ import TabsItem from "../../../components/general/tabs/TabsItem";
 const Project = () => {
   const { id } = useParams();
   const project = useProjectById(parseInt(id));
-  const [activeTab, setActiveTab] = React.useState("android");
+  const [activeTab, setActiveTab] = React.useState("Android");
 
   function changeTab(e) {
-    setActiveTab(e.currentTarget.dataset.device || "android");
+    setActiveTab(e.currentTarget.dataset.device || "Android");
   }
 
   return (
@@ -80,7 +80,7 @@ const Project = () => {
 
         <div className={style.infoContainer}>
           <div className={style.logoContainer}>
-            <img className={style.logo} src={project?.logo} />
+            <img className={style.logo} src={project?.photo} />
           </div>
           <div>
             <div className={style.platformText}>Доступно в:</div>
@@ -91,22 +91,22 @@ const Project = () => {
 
       <Tabs>
         <TabsItem
-          selected={activeTab === "android"}
-          data-device={"android"}
+          selected={activeTab === "Android"}
+          data-device={"Android"}
           onClick={changeTab}
         >
           Android
         </TabsItem>
         <TabsItem
-          selected={activeTab === "ios"}
-          data-device={"ios"}
+          selected={activeTab === "Ios"}
+          data-device={"Ios"}
           onClick={changeTab}
         >
           IOS
         </TabsItem>
         <TabsItem
-          selected={activeTab === "desktop"}
-          data-device={"desktop"}
+          selected={activeTab === "Desktop"}
+          data-device={"Desktop"}
           onClick={changeTab}
         >
           Desktop
@@ -114,9 +114,10 @@ const Project = () => {
       </Tabs>
 
       <Gallery>
-        {project.screenshots[activeTab].map((i, index) => (
-          <img key={index} src={i} />
-        ))}
+        {project &&
+          project["screenshots" + activeTab]
+            .split(",")
+            .map((i, index) => <img key={index} src={i} />)}
       </Gallery>
     </div>
   );

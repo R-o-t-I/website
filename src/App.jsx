@@ -14,9 +14,39 @@ import Contacts from "./pages/contacts/contacts";
 import ScrollToTop from "./utils/scrollToTop";
 import { useRecoilState } from "recoil";
 import { useModal } from "./storage/selectors/main";
+import useSnackbar from "./hooks/useSnackbar";
+import React, { useEffect, useLayoutEffect } from "react";
+import axios from "axios";
+import Snackbar from "./components/general/snackbar/Snackbar";
+import useProjects from "./hooks/useProjects";
 
+let isInit = false;
 function App() {
   const [modal] = useRecoilState(useModal);
+  const [snackbar, setSnackbar] = useSnackbar();
+  const [, setProjects] = useProjects();
+
+  useLayoutEffect(() => {
+    console.log("aaaa");
+    if (!isInit) {
+      getProjects();
+    }
+    isInit = true;
+    async function getProjects() {
+      try {
+        const { data } = await axios.get("projects.get");
+        console.log(data);
+        setProjects(data.projects);
+      } catch (e) {
+        console.error(e);
+        setSnackbar(
+          <Snackbar>
+            {e?.response?.data?.error || "Неизвестная ошибка"}
+          </Snackbar>,
+        );
+      }
+    }
+  }, []);
 
   return (
     <div className="App">
@@ -36,6 +66,7 @@ function App() {
         {/*<Order />*/}
         <Footer />
         {modal}
+        {snackbar}
       </Router>
     </div>
   );

@@ -1,15 +1,22 @@
-import React from 'react';
-import style from './Button.module.scss';
+import React from "react";
+import style from "./Button.module.scss";
 
 interface TitleProps {
-  children: React.ReactNode,
-  before: React.ReactNode,
-  after: React.ReactNode,
-  className?: boolean,
-  mode: string,
+  children?: React.ReactNode;
+  before?: React.ReactNode;
+  after?: React.ReactNode;
+  className?: boolean;
+  mode?: string;
 }
 
-const Button = ({children, mode, before, after, className,  ...props} : TitleProps) => {
+const Button = ({
+  children,
+  mode,
+  before,
+  after,
+  className,
+  ...props
+}: TitleProps) => {
   return (
     <button
       className={`

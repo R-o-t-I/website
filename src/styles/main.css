@@ -97,42 +97,24 @@ body {
   flex-direction: column;
 }
 
-/* Снэк-бар - расположите ее внизу и в середине экрана */
-#snackbar {
-  visibility: hidden; /* Скрыто по умолчанию. Видимый по щелчку мыши */
-  min-width: 250px; /* Установите минимальную ширину по умолчанию */
+.snackbar {
+  min-width: 250px;
   max-width: 400px;
-  background: var(--text_secondary); /* Цвет фона */
-  color: #fff; /* Цвет текста */
-  text-align: left; /* Центрированный текст */
-  border-radius: 16px; /* Округленные границы */
-  padding: 16px; /* Отступ */
-  position: fixed; /* Сядьте на верхнюю часть экрана */
-  z-index: 5; /* Добавить z-индекс при необходимости */
+  background: var(--text_secondary);
+  color: #fff;
+  text-align: left;
+  border-radius: 16px;
+  padding: 16px;
+  position: fixed;
+  z-index: 5;
   left: 50px;
   right: 50px;
-  bottom: 30px; /* 30 пикселей снизу */
+  bottom: 30px;
+  animation: fadein linear .3s;
 }
 
-/* Показывать снэк-бар при нажатии на кнопку (Класс добавлен с помощью JavaScript) */
-#snackbar.show {
-  visibility: visible; /* Покажите снэк-бар */
-  /* Добавить анимацию: Возьмите 0,5 секунды, чтобы исчезать и выходить из закусочной.
-  Однако задержите процесс затухания на 2,5 секунды */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-/* Анимация, чтобы исчезать снэк-бар в и из */
-@-webkit-keyframes fadein {
-  from {
-    bottom: 0;
-    opacity: 0;
-  }
-  to {
-    bottom: 30px;
-    opacity: 1;
-  }
+.snackbar.hidden {
+  animation: fadeout linear .3s;
 }
 
 @keyframes fadein {
@@ -143,17 +125,6 @@ body {
   to {
     bottom: 30px;
     opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeout {
-  from {
-    bottom: 30px;
-    opacity: 1;
-  }
-  to {
-    bottom: 0;
-    opacity: 0;
   }
 }
 

@@ -1,16 +1,24 @@
-import React from 'react';
-import style from './Input.module.scss';
+import React, { ChangeEvent } from "react";
+import style from "./Input.module.scss";
 
 interface InputProps {
-  children: React.ReactNode,
-  value: string,
-  className?: string,
-  type: string,
-  placeholder: string,
-  name: string,
+  value?: string;
+  className?: string;
+  type?: string;
+  placeholder?: string;
+  name?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => any;
 }
 
-const Input = ({children, type, placeholder, name, value, className,  ...props} : InputProps) => {
+const Input = ({
+  type,
+  placeholder,
+  name,
+  value,
+  className,
+  onChange,
+  ...props
+}: InputProps) => {
   return (
     <input
       className={style.container}
@@ -19,6 +27,7 @@ const Input = ({children, type, placeholder, name, value, className,  ...props} 
       placeholder={placeholder}
       name={name}
       value={value}
+      onChange={onChange}
     />
   );
 };
