@@ -1,8 +1,8 @@
 interface ITeamMember {
   id: number;
-  avatar: string;
+  photo: string;
   name: string;
-  position: string;
+  post: string;
   vk: string;
 }
 

@@ -51,12 +51,6 @@ const FormContacts = () => {
     <div className={style.formContainer}>
       <div className={style.formBlock}>
         <div className={style.selectContainer}>
-          {/*<select className={style.selectItemContainer}>
-            <option>Заказать услугу</option>
-            <option>Баг/ошибка/замечание</option>
-            <option>Сотрудничество</option>
-            <option>Другое</option>
-          </select>*/}
           <Select
             value={selectOptions.find((o) => o.name === value).ru}
             onChange={(v) =>
