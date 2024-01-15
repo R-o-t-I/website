@@ -16,11 +16,12 @@ const TeamMemberProfileModal = ({ member }: TeamMemberProfileModalProps) => {
     <Modal onClose={() => setModal(null)}>
       <div className={style.infoUserContainer}>
         <div className={style.infoUser}>
-          <div className={style.name}>{member.name}</div>
-          <div className={style.position}>{member.position}</div>
+          <div className={style.name}>{member.surname} {member.name} {member.patronymic}</div>
+          <div className={style.position}>{member.post}</div>
+          <div className={style.description}>{member.description}</div>
         </div>
         <div className={style.avatarContainer}>
-          <img className={style.avatar} />
+          <img src={member.photo} className={style.avatar} />
         </div>
       </div>
     </Modal>
