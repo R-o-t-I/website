@@ -5,14 +5,12 @@ import "./styles/main.css";
 import { RecoilRoot } from "recoil";
 import axios from "axios";
 
-//axios.defaults.baseURL = "http://localhost:3113/";
-axios.defaults.baseURL = "https://api.skyreglis.com/";
+axios.defaults.baseURL = "http://localhost:3113/";
+//axios.defaults.baseURL = "https://api.skyreglis.com/";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <App />
-    </RecoilRoot>
-  </React.StrictMode>,
+  <RecoilRoot>
+    <App />
+  </RecoilRoot>,
 );

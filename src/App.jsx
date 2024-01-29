@@ -14,13 +14,12 @@ import ScrollToTop from "./utils/scrollToTop";
 import { useRecoilState } from "recoil";
 import { useModal } from "./storage/selectors/main";
 import useSnackbar from "./hooks/useSnackbar";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import axios from "axios";
 import Snackbar from "./components/general/snackbar/Snackbar";
 import useProjects from "./hooks/useProjects";
 import useTeam from "./hooks/useTeam";
 
-let isInit = false;
 function App() {
   const [modal] = useRecoilState(useModal);
   const [snackbar, setSnackbar] = useSnackbar();
@@ -28,11 +27,10 @@ function App() {
   const [, setTeam] = useTeam();
 
   useLayoutEffect(() => {
-    if (!isInit) {
-      getProjects();
-      getTeam();
-    }
-    isInit = true;
+    console.log("ads");
+    getProjects();
+    getTeam();
+
     async function getProjects() {
       try {
         const { data } = await axios.get("projects.get");
