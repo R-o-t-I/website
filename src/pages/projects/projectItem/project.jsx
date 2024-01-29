@@ -75,6 +75,7 @@ const Project = () => {
           </div>
           <div className={style.descriptions}>{project?.description}</div>
           <div>История идеи</div>
+          <div className={style.descriptions}>{project?.story}</div>
           <div className={style.stackContainer}>Стек: </div>
         </div>
 

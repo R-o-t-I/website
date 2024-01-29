@@ -63,17 +63,17 @@ const categories = {
   },
   apps: {
     icon: <TbApps size={20} />,
-    ru: "Сервис",
+    ru: "Приложение",
     en: "App",
   },
   bots: {
     icon: <TbRobot size={20} />,
-    ru: "Бот",
+    ru: "Чат-бот",
     en: "Bot",
   },
   games: {
     icon: <TbDeviceGamepad2 size={20} />,
-    ru: "Игра",
+    ru: "Веб-игра",
     en: "Game",
   },
   masks: {
