@@ -111,17 +111,30 @@
 }
 
 @media screen and (max-width: 600px) {
-  .line4 {
+  /*.line4 {
     display: none;
+  }*/
+
+  .line1, .line2, .line3 {
+    height: 70px;
+
+    svg {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  .textBGContacts, .textBGColorContacts {
+    font-size: 70px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .line3 {
+  /*.line3 {
     display: none;
   }
 
   .line4 {
     display: none;
-  }
+  }*/
 }
