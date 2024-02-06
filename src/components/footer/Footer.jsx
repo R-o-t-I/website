@@ -26,7 +26,7 @@ const Footer = () => {
             <div>Пользовательское соглашение</div>
             <div>Политика конфиденциальности</div>
           </div>
-          <div className={style.copyright}>©2020 – 2023 SkyReglis Studio</div>
+          <div className={style.copyright}>©2020 – 2024 SkyReglis Studio</div>
         </div>
       </div>
     </footer>
