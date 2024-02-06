@@ -44,39 +44,53 @@ const Project = () => {
           <div>
             {project?.category === "sites" && (
               <div className={style.categoryContainer}>
-                <TbDeviceDesktop size={28} /> Сайт
+                <TbDeviceDesktop className={style.categoryIcon} size={28} />
+                Сайт
               </div>
             )}
             {project?.category === "apps" && (
               <div className={style.categoryContainer}>
-                <TbApps size={28} /> Приложение
+                <TbApps className={style.categoryIcon} size={28} />
+                Приложение
               </div>
             )}
             {project?.category === "bots" && (
               <div className={style.categoryContainer}>
-                <TbRobot size={28} /> Чат-бот
+                <TbRobot className={style.categoryIcon} size={28} />
+                Чат-бот
               </div>
             )}
             {project?.category === "games" && (
               <div className={style.categoryContainer}>
-                <TbDeviceGamepad2 size={28} /> Веб-игра
+                <TbDeviceGamepad2 className={style.categoryIcon} size={28} />
+                Веб-игра
               </div>
             )}
             {project?.category === "masks" && (
               <div className={style.categoryContainer}>
-                <TbMasksTheater size={28} /> Маска
+                <TbMasksTheater className={style.categoryIcon} size={28} />
+                Маска
               </div>
             )}
             {project?.category === "other" && (
               <div className={style.categoryContainer}>
-                <TbStars size={28} /> Прочее
+                <TbStars className={style.categoryIcon} size={28} />
+                Прочее
               </div>
             )}
           </div>
-          <div className={style.descriptions}>{project?.description}</div>
-          <div>История идеи</div>
-          <div className={style.descriptions}>{project?.story}</div>
-          <div className={style.stackContainer}>Стек: </div>
+          <div className={style.infoItemContauner}>
+            <div className={style.titleInfo}>Описание:</div>
+            <div className={style.descriptions}>{project?.description}</div>
+          </div>
+          <div className={style.infoItemContauner}>
+            <div className={style.titleInfo}>История идеи:</div>
+            <div className={style.descriptions}>{project?.story}</div>
+          </div>
+          <div className={style.infoItemContauner}>
+            <div className={style.titleInfo}>Стек:</div>
+            <div className={style.descriptions}></div>
+          </div>
         </div>
 
         <div className={style.infoContainer}>

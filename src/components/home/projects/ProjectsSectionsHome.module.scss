@@ -4,11 +4,9 @@
 }
 
 .projectsList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  row-gap: 48px;
-  column-gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px 24px;
 }
 
 .projectItem {
@@ -17,7 +15,7 @@
   background: var(--background_card);
   border-radius: 16px;
   position: relative;
-  width: calc((100% / 4) - 18px);
+  width: 100%;
   transition: transform 0.5s;
 }
 

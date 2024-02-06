@@ -85,6 +85,8 @@ body {
   letter-spacing: -0.5px;
   background: var(--background_page);
   overflow-x: hidden;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 #root {
@@ -110,11 +112,11 @@ body {
   left: 50px;
   right: 50px;
   bottom: 30px;
-  animation: fadein linear .3s;
+  animation: fadein linear 0.3s;
 }
 
 .snackbar.hidden {
-  animation: fadeout linear .3s;
+  animation: fadeout linear 0.3s;
 }
 
 @keyframes fadein {

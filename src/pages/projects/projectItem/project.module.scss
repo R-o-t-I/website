@@ -67,6 +67,22 @@
   color: var(--text_primary);
 }
 
+.categoryIcon {
+  color: var(--icon_accent);
+}
+
+.infoItemContauner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.titleInfo {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text_accent);
+}
+
 .descriptions {
   color: var(--text_primary);
   font-size: 20px;
@@ -105,8 +121,4 @@
 .platformList {
   display: flex;
   gap: 12px;
-}
-
-.stackContainer {
-  color: var(--text_primary);
 }

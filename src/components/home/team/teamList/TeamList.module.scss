@@ -14,8 +14,10 @@
 .avatarContainer {
   width: 100%;
   max-width: 200px;
+  min-width: 200px;
   height: 100%;
   max-height: 200px;
+  min-height: 200px;
   transition: transform 0.5s;
   display: flex;
   align-items: center;
