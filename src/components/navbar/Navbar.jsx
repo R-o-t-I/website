@@ -10,7 +10,7 @@ import ButtonTheme from "../buttonTheme/ButtonTheme";
 //Иконки
 import { ReactComponent as IconLogo } from "../../img/logo.svg";
 import NavbarItem from "./NavbarItem";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const nav = [
   {
@@ -60,7 +60,7 @@ const Navbar = () => {
           </NavLink>
 
           <div className={style.afterMenu}>
-            <nav
+            {/*<nav
               className={
                 menuActive === false
                   ? `${style.headerMenu}`
@@ -74,18 +74,18 @@ const Navbar = () => {
                   </NavbarItem>
                 ))}
               </ul>
-            </nav>
+            </nav>*/}
             <div className={style.buttonHeader}>
-              <div
+              {/*<div
                 className={style.languageButton}
                 onClick={handleLenguageChange}
               >
                 {language === "ru" ? t("english") : t("russian")}
-              </div>
+              </div>*/}
               <div className={style.themeButton}>
                 <ButtonTheme />
               </div>
-              <div
+              {/*<div
                 className={
                   menuActive === false
                     ? style.headerBurger
@@ -94,7 +94,7 @@ const Navbar = () => {
                 onClick={() => setMenuActive(!menuActive)}
               >
                 <span></span>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>

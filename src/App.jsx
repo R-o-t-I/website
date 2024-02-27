@@ -9,6 +9,7 @@ import Projects from "./pages/projects/projects";
 import Project from "./pages/projects/projectItem/project";
 import Team from "./pages/team/team";
 import Contacts from "./pages/contacts/contacts";
+import Developing from "./pages/developing/developing";
 
 import ScrollToTop from "./utils/scrollToTop";
 import { useRecoilState } from "recoil";
@@ -41,7 +42,7 @@ function App() {
         setSnackbar(
           <Snackbar>
             {e?.response?.data?.error || "Неизвестная ошибка"}
-          </Snackbar>,
+          </Snackbar>
         );
       }
     }
@@ -56,7 +57,7 @@ function App() {
         setSnackbar(
           <Snackbar>
             {e?.response?.data?.error || "Неизвестная ошибка"}
-          </Snackbar>,
+          </Snackbar>
         );
       }
     }
@@ -66,10 +67,14 @@ function App() {
     <div className="App">
       <Router>
         <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Developing />} />
+        </Routes>
+
         <div style={{ marginBottom: 70 }}>
           <Navbar />
         </div>
-        <Routes>
+        {/*<Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
@@ -77,8 +82,8 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
-        {/*<Order />*/}
-        <Footer />
+        <Order />
+        <Footer />*/}
         {modal}
         {snackbar}
       </Router>
