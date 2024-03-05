@@ -10,6 +10,7 @@ import Project from "./pages/projects/projectItem/project";
 import Team from "./pages/team/team";
 import Contacts from "./pages/contacts/contacts";
 import Developing from "./pages/developing/developing";
+import Order from "./components/order/Order";
 
 import ScrollToTop from "./utils/scrollToTop";
 import { useRecoilState } from "recoil";
@@ -67,14 +68,14 @@ function App() {
     <div className="App">
       <Router>
         <ScrollToTop />
-        <Routes>
+        {/*<Routes>
           <Route path="/" element={<Developing />} />
-        </Routes>
+        </Routes>*/}
 
         <div style={{ marginBottom: 70 }}>
           <Navbar />
         </div>
-        {/*<Routes>
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
@@ -82,8 +83,8 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/contacts" element={<Contacts />} />
         </Routes>
-        <Order />
-        <Footer />*/}
+        {/*<Order />*/}
+        <Footer />
         {modal}
         {snackbar}
       </Router>

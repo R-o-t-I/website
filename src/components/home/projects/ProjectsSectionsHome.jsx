@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Title from "../../general/typography/title/Title.tsx";
 import Button from "../../general/button/Button.tsx";
 import { NavLink } from "react-router-dom";
+import Slider from "react-slick";
 import style from "./ProjectsSectionsHome.module.scss";
 
 //Иконки
@@ -13,6 +14,7 @@ import {
   TbMasksTheater,
   TbStars,
 } from "react-icons/tb";
+
 import TabsItem from "../../general/tabs/TabsItem";
 import Tabs from "../../general/tabs/Tabs";
 import useProjects from "../../../hooks/useProjects";
@@ -100,6 +102,45 @@ const ProjectsSectionsHome = () => {
     return projects.filter((p) => p.category === selected);
   }
 
+  const settings = {
+    centerMode: true,
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 4000,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          centerMode: true,
+          dots: true,
+          infinite: true,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplay: true,
+          speed: 2000,
+          autoplaySpeed: 4000,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          centerMode: true,
+          dots: true,
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          speed: 2000,
+          autoplaySpeed: 4000,
+        },
+      },
+    ],
+  };
+
   return (
     <div className={style.content}>
       <Title
@@ -124,32 +165,34 @@ const ProjectsSectionsHome = () => {
       </Tabs>
 
       <div className={style.projectsList}>
-        {getSelectedProjects()?.map((item) => (
-          <NavLink
-            key={item.id}
-            to={`/project/${item.id}`}
-            className={style.projectItem}
-          >
-            <div className={style.typeContainer}>
-              <div className={style.iconContainer}>
-                {categories[item.category].icon}
+        <Slider {...settings}>
+          {getSelectedProjects()?.map((item) => (
+            <NavLink
+              key={item.id}
+              to={`/project/${item.id}`}
+              className={style.projectItem}
+            >
+              <div className={style.typeContainer}>
+                <div className={style.iconContainer}>
+                  {categories[item.category].icon}
+                </div>
+                <div className={style.type}>{categories[item.category].ru}</div>
               </div>
-              <div className={style.type}>{categories[item.category].ru}</div>
-            </div>
-            <div className={style.coverContainer}>
-              <img src={item.cover} className={style.cover} />
-            </div>
-            <div className={style.infoItemContainer}>
-              <div className={style.logoContainer}>
-                <img src={item.photo} className={style.logo} />
+              <div className={style.coverContainer}>
+                <img src={item.cover} className={style.cover} />
               </div>
-              <div className={style.infoContainer}>
-                <div className={style.titleProject}>{item.title}</div>
-                <div className={style.description}>{item.description}</div>
+              <div className={style.infoItemContainer}>
+                <div className={style.logoContainer}>
+                  <img src={item.photo} className={style.logo} />
+                </div>
+                <div className={style.infoContainer}>
+                  <div className={style.titleProject}>{item.title}</div>
+                  <div className={style.description}>{item.description}</div>
+                </div>
               </div>
-            </div>
-          </NavLink>
-        ))}
+            </NavLink>
+          ))}
+        </Slider>
 
         {!getSelectedProjects() && (
           <div className={style.placeholder}>

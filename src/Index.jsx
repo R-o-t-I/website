@@ -4,6 +4,8 @@ import App from "./App";
 import "./styles/main.css";
 import { RecoilRoot } from "recoil";
 import axios from "axios";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 //axios.defaults.baseURL = "http://localhost:3113/";
 axios.defaults.baseURL = "https://api.skyreglis.com/";

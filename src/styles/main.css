@@ -140,3 +140,32 @@ body {
     opacity: 0;
   }
 }
+
+.slick-list {
+  overflow: visible !important;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: var(--background_button_accent) !important;
+  font-size: 50px !important;
+}
+
+.slick-prev,
+.slick-next {
+  width: 50px !important;
+  height: 50px !important;
+  z-index: 2 !important;
+}
+
+.slick-slide > div {
+  margin: 0 12px !important;
+}
+
+.slick-dots li {
+  width: max-content !important;
+}
+
+.slick-dots li button {
+  width: max-content !important;
+}
