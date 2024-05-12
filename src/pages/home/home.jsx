@@ -9,6 +9,7 @@ import style from "./home.module.scss";
 const Home = () => {
   return (
     <div className={style.contentContainer}>
+      {console.log(0 || "")}
       <GreetingsSectionsHome />
       <ServicesSectionsHome />
       <ProjectsSectionsHome />
